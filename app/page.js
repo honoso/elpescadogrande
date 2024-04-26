@@ -1,95 +1,82 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import React from 'react';
+import Image from 'next/image';
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main className="main">
+      <div className="border">
+        <div className="border border-top"></div>
+        <div className="border border-right"></div>
+        <div className="border border-left"></div>
+        <div className="border border-bottom"></div>
       </div>
-
-      <div className={styles.center}>
+      <p style={{ zIndex: 100 }}>
+        1133 S. Vermont Ave #24, Los Angeles, CA 90006 (213) 674-7053
+      </p>
+      <ul className="menu">
+        <li className="menu-item">
+          <a href="#about">About Us</a>
+        </li>
+        <li className="menu-item">
+          <a href="#menu">Menu</a>
+        </li>
+        <li className="menu-item">
+          <a href="#catering">Catering</a>
+        </li>
+        <li className="menu-item">
+          <a href="#info">Hours & Location</a>
+        </li>
+        <li className="menu-item">
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+      <div className="hero">
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src="/pescado_grande_white.png"
+          alt="El Pescado Grande Logo"
+          width="1000"
+          height="600"
         />
+        <h2 className="hero-subheading">
+          Guatemalan & Salvadorian Seafood Fusion
+        </h2>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="about" id="about">
+        <div className="about-hero">
+          <Image
+            className="about-image"
+            src="/fish-plate.jpg"
+            alt="Fish Plate"
+            width="1500"
+            height="500"
+          />
+          <h2 className="about-title">Our Story</h2>
+        </div>
+        <p className="about-text">
+          El Pescado Grande is a family-owned restaurant located at 1133 S.
+          Vermont Ave #24, Los Angeles, CA 90006. With a phone number of (213)
+          674-7053, it offers a unique fusion of Guatemalan and Salvadorian
+          seafood. The restaurant takes pride in its commitment to quality,
+          using fresh ingredients and bold spices to create dishes inspired by
+          the traditional flavors of Central America. Whether you're looking for
+          an authentic dining experience or simply craving delicious seafood, El
+          Pescado Grande is the place to be.
+          <br />
+          <br />
+          At El Pescado Grande, we believe that food is not just about
+          nourishment, but also about creating memories. Our team is dedicated
+          to providing our customers with an unforgettable dining experience.
+          From the moment you step into our restaurant, you'll be greeted with a
+          warm and inviting atmosphere. Our menu offers a variety of options,
+          from classic seafood dishes to innovative creations that showcase the
+          best of Guatemalan and Salvadorian cuisine. Whether you're joining us
+          for a casual lunch or a special occasion, we strive to make every
+          visit to El Pescado Grande a memorable one.
+        </p>
       </div>
+      <div></div>
     </main>
-  )
-}
+  );
+};
+
+export default Home;

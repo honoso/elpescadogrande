@@ -1,0 +1,159 @@
+@use 'sass:math';
+$background: #76c7f3;
+$wave-size: 5rem;
+
+div {
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.border {
+  position: fixed;
+  z-index: 100;
+  background: $background;
+
+  &-top {
+    left: 0;
+    top: 0;
+    height: $wave-size;
+    width: 100vw;
+
+    --mask: radial-gradient(
+          67.08px at 50% calc(100% - 90px),
+          #000 99%,
+          #0000 101%
+        )
+        calc(50% - 60px) 0/120px 100%,
+      radial-gradient(67.08px at 50% calc(100% + 60px), #0000 99%, #000 101%)
+        50% calc(100% - 30px) / 120px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+
+  &-bottom {
+    bottom: 0;
+    left: 0;
+    height: $wave-size;
+    width: 100vw;
+
+    --mask: radial-gradient(67.08px at 50% 90px, #000 99%, #0000 101%)
+        calc(50% - 60px) 0/120px 100%,
+      radial-gradient(67.08px at 50% -60px, #0000 99%, #000 101%) 50% 30px/120px
+        100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+
+  &-left {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: $wave-size;
+
+    --mask: radial-gradient(
+          67.08px at calc(100% - 90px) 50%,
+          #000 99%,
+          #0000 101%
+        )
+        0 calc(50% - 60px) / 100% 120px,
+      radial-gradient(67.08px at calc(100% + 60px) 50%, #0000 99%, #000 101%)
+        calc(100% - 30px) 50%/100% 120px repeat-y;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+
+  &-right {
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: $wave-size;
+
+    --mask: radial-gradient(67.08px at 90px 50%, #000 99%, #0000 101%) 0
+        calc(50% - 60px) / 100% 120px,
+      radial-gradient(67.08px at -60px 50%, #0000 99%, #000 101%) 30px 50%/100%
+        120px repeat-y;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  padding-top: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 99;
+  background: #fff;
+  width: 100vw;
+
+  &-item {
+    list-style: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  a:link,
+  a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+
+  &-subheading {
+    text-transform: capitalize;
+  }
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &-hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-image {
+    object-fit: cover;
+  }
+
+  &-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+  }
+
+  &-text {
+    font-size: 2rem;
+    width: 80%;
+    text-align: center;
+    align-self: center;
+    line-height: 3.6rem;
+  }
+}

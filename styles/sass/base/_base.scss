@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 62.5%; // 1rem = 10px
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px
+  }
+
+  @include respond(phone) {
+    font-size: 43.75%; //1rem = 7px
+  }
+}
+
+body {
+  padding: 5rem;
+  height: 100%;
+}

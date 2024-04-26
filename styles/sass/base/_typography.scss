@@ -1,0 +1,53 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #1c2c59;
+}
+
+.primary-heading {
+  color: #fff;
+  font-size: 8rem;
+  font-weight: 300;
+
+  @include respond(tab-land) {
+    font-size: 6rem;
+  }
+
+  @include respond(phone-small) {
+    font-size: 6rem;
+  }
+}
+
+.secondary-heading {
+  font-size: 5rem;
+  font-weight: 600;
+  color: #fff;
+
+  @include respond(tab-port) {
+    font-size: 4.5rem;
+  }
+
+  &__dark {
+    font-size: 5rem;
+    color: #262a3f;
+
+    @include respond(tab-port) {
+      font-size: 4.5rem;
+    }
+  }
+}
+
+.tertiary-heading {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.paragraph {
+  // color: $color-text;
+  font-size: 1.6rem;
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+}
